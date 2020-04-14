@@ -377,6 +377,7 @@ src: local('Cocogoose Pro SemiLight'), url('Cocogoose Pro SemiLight Trial.woff')
   margin: 20px;
   width: 20px;
   position: fixed;
+  top: 0;
 }
 
 #foto-perfil {
@@ -529,6 +530,7 @@ src: local('Cocogoose Pro SemiLight'), url('Cocogoose Pro SemiLight Trial.woff')
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-top: 80px;
 }
 
 #notif ul li {
