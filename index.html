@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title> Nido </title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./nido.png">
+</head>
+
+<body>
+  <!--LOGIN-->
+  <section id="tela-login" class="section">
+    <div>  
+      <img src="./nido1.png" class="logo-login" alt="Logo Nido= pássaro olhando para trás"> 
+        <h3 id="desc"> Bem-vindo ao Nido :) </h3>
+    </div>    
+    <div id="cadastro">
+      <label for="login">Email</label> <br>
+      <input type="text" id="login"> <br>
+      <label for="senha">Senha</label> <br>
+      <input type="password" id="senha"> <br>
+      <input type="submit" id="cadastrar" onclick="cadastrar(); alerta(); atencao();" value="Cadastrar">
+    </div>
+    <p id="logar"> Já é cadastrado? <a href="#" onclick="cadastrar(); alerta(); atencao();"> Fazer Login </a> </p>
+    <span id="trem-login"> </span >
+  </section>
+
+  <!--INCIO-->
+  <section id="inicio" class="section">
+    <nav>
+      <ul id="navbar">
+        <li> <a href="#" onclick="perfil()"> <img src="./perfil.svg" alt="ícone de perfil"> </a> </li>
+        <li> <img src="./Nido.svg" alt="Nido"> </li>
+        <li> <a href="#" onclick="notif()"> <img src="./notif.svg" alt="ícone de notificação"> </a> </li>
+      </ul>
+    </nav>
+    <section id="telas">      
+      <div class="card-add" id="card-1">  
+        <img src="./filho4.jpg" class="filhos" alt="foto de uma criança de trancinhas">
+        <p class="text">Mariana da Silva</p>
+        <h4 class="titulo-card"> Localização </h4>
+        <img src="./mapa.png" alt="mapa" class="mapa" onclick="tela_api()">
+        <a href="#" class="rota" onclick="tela_api()"> Traçar rota </a>
+        <div class="bloco-dados">
+          <span class="dados">
+            Status da Bateria 
+            <span> 
+              97%
+              <img src="./bat1.svg" alt="nível da bateria cheio" style="margin-left:7px;">
+            </span>     
+          </span>   
+          <span class="dados">
+            Distância <span> 5m </span>
+          </span>
+        </div>
+      </div>
+      <div class="card-add" id="card-2">
+        <img src="./filho2.jpg" class="filhos" alt="foto de uma criança de longe">
+        <p class="text">Marcela da Silva</p>        
+        <h4 class="titulo-card"> Localização </h4>
+        <img src="./mapa.png" alt="mapa" class="mapa" onclick="tela_api()">
+        <a href="#" class="rota" onclick="tela_api()"> Traçar rota </a>
+        <div class="bloco-dados">
+          <span class="dados">
+            Status da Bateria
+            <span> 
+              80%
+              <img src="./bat1.svg" alt="nível da bateria cheio" style="margin-left:7px;">
+            </span>     
+          </span>   
+          <span class="dados">
+            Distância <span> 2m </span>
+          </span>
+        </div>
+      </div>
+      <div class="card-add" id="card-3">
+        <img src="./filho3.jpg" class="filhos" alt="foto de uma criança brincando"> 
+        <p class="text">Carolina da Silva</p>
+        <h4 class="titulo-card"> Localização </h4>
+        <img src="./mapa.png" alt="mapa" class="mapa" onclick="tela_api()">
+        <a href="#" class="rota" onclick="tela_api()"> Traçar rota </a>
+        <div class="bloco-dados">
+          <span class="dados">
+            Status da Bateria
+            <span> 
+              92%
+              <img src="./bat1.svg" alt="nível da bateria cheio" style="margin-left:7px;">
+            </span>     
+          </span>   
+          <span class="dados">
+            Distância <span> 0m </span>
+          </span>
+        </div>
+      </div>
+      <div style="width:15px;"> </div>
+    </section>
+    <a class="btn"> </a>
+    <span id="bg" class='color' data-value='1'> </span>
+    <div  id="card-4">
+        <img src="./close.svg" alt="fechar" class="btnx">
+        <label for='selecao-arquivo'>
+          <img src="./addpassaro.svg" alt="adicionar foto"  id="add-passaro" class="filhos"> 
+        </label>
+        <input id='selecao-arquivo' type='file' style="display:none;" accept="image/*">
+        <input type="text" class="text" placeholder="Nome"> 
+        <span id="botoes"> 
+          <button class="conectar-btn active" id="bluetooth"> Conectar Dispositivo </button> 
+          <button class="conectar-btn" id="add"> Adicionar </button> 
+        </span>
+    </div>
+  </section>
+
+  <!--PERFIL-->
+  <section id="perfil" class="section">
+    <div id="perfil-sup">
+      <span id="background1"> </span>
+      <img  src="./voltar.svg" alt="voltar" id="btn-voltar-perfil" onclick="voltar_perfil()">
+      <img src="./foto-perfil.jpg" alt="foto mãe" id="foto-perfil">
+      <h2 id="nome-perfil"> Joana da Silva </h2>
+    </div>
+    <div id="dados-perfil">
+      <span class="info">
+        Email
+        <button class="dados-btn"> editar </button>
+      </span>
+      <input type="text" value="joanadasilva@gmail.com">
+      <span class="info">
+        Senha
+        <button class="dados-btn"> editar </button>  
+      </span>
+      <input type="password" value="qualquersenha">
+    </div>    
+    <p id="dist">Distância Máxima </p>
+    <div class="container">  
+      <div class="range-slider">
+        <span id="rs-bullet" class="rs-label">1</span>
+        <input id="rs-range-line" class="rs-range" type="range" value="0" min="1" max="20">         
+      </div>  
+    </div>
+    <button class="dados-btn config" onclick="sair()"> Redefinir conta </button>
+    <button class="dados-btn sair" onclick="sair()"> Sair </button>
+  </section>
+
+  <!--NOTIFICAÇÃO-->
+  <section id="notif" class="section">
+    <img  src="./voltar2.svg" alt="voltar" id="btn-voltar-perfil" onclick="voltar_notif()">
+    <ul>
+      <li> 
+        <span>
+          <img src="./filho4.jpg" class="filhos" alt="foto de uma criança de trancinhas">
+          <p> <em> Mariana </em> passou do limite de distância </p>
+        </span>
+        <p> 17h </p>
+      </li>
+      <li> 
+        <span>
+          <img src="./filho3.jpg" class="filhos" alt="foto de uma criança de trancinhas">
+          <p> <em> Carolina </em> acionou o botão de emergência </p>
+        </span>
+        <p> 1 dia </p>
+      </li>
+      <li> 
+        <span>
+          <img src="./filho2.jpg" class="filhos" alt="foto de uma criança de trancinhas">
+          <p> <em> Marcela </em> passou do limite de distância </p>
+        </span>
+        <p> 2 dias </p>
+      </li>
+    </ul>   
+    <span id="trem-login"> </span >   
+  </section>
+
+  <!--TELA ALERTA-->
+  <section id="tela-alerta"> 
+    <img src="./close.svg" alt="fechar" class="fechar" onclick="voltar_alerta()">
+    <img src="./nidoalerta.png" alt="logo com chapéu de emergência" class="logo-login emergencia">
+    <h2 id="alerta"> ALERTA </h2>
+    <p class="desc-alerta"> <em> Mariana </em>acionou o botão de <em>emergência </em> </p>
+    <div onclick="abrir_mapa()">
+      <img src="pinpoint.svg" alt="Localização" class="localizacao">
+      <p class="texto-localizacao"> Ver localização </p>
+    </div>
+  </section>
+
+  <!--TELA ATENÇÃO-->
+  <section id="tela-atencao"> 
+    <img src="./close.svg" alt="fechar" class="fechar" onclick="voltar_atencao()">
+    <img src="./nido.png" alt="logo com chapéu de emergência" class="logo-login emergencia">
+    <h2 id="atencao"> ATENÇÃO </h2>
+    <p class="desc-alerta"> <em> Mariana da Silva </em>passou do limite de <em> distância</em> </p>
+    <div onclick="abrir_mapa()">
+      <img src="pinpoint.svg" alt="Localização" class="localizacao">
+      <p class="texto-localizacao"> Ver localização </p>
+    </div>
+  </section>
+
+
+<!--MAPA-->
+  <section id="api">
+    <nav>
+      <ul id="navbar-api">
+        <li> <img  src="./voltar_azul.svg" alt="voltar" id="btn-voltar-api" onclick="voltar_api()"> </li>
+        <li> <img src="./Nido.svg" alt="Nido" style="margin: 5px 115px;"> </li>
+      </ul>
+    </nav>
+    <div id="map" style="overflow: visible;"></div>     
+  </section>
+
+
+<script src="script.js"></script>   
+<!--API KEY-->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5bLIem1KkJsPuaT7_GZn4pyoDt0Pod0E&callback=initMap">
+</script>
+
+
+</body>
+</html>
